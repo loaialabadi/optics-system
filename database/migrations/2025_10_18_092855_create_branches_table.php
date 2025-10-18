@@ -13,7 +13,6 @@ return new class extends Migration {
             $table->string('name');
             $table->string('mobile')->unique();
             $table->string('address');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ربط الفرع بمستخدم
             $table->timestamps();
         });
     }

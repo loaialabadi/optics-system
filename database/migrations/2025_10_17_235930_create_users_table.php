@@ -19,8 +19,6 @@ return new class extends Migration
             $table->enum('role', ['admin', 'branch', 'workshop'])->default('branch');
 
             // المفتاح الأجنبي لازم بعد جدول الفروع
-            $table->unsignedBigInteger('branch_id')->nullable();
-            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('set null');
 
             $table->boolean('is_active')->default(true);
 

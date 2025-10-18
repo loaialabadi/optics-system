@@ -30,6 +30,8 @@ Route::middleware([CheckLogin::class])->group(function () {
 
         // Dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::get('/branchs', [DashboardController::class, 'branch'])->name('branch.index');
+        Route::get('/workshop', [DashboardController::class, 'workshop'])->name('workshop.index');
 
         // Users CRUD
         Route::resource('users', UserController::class)->except(['show']);
@@ -40,4 +42,19 @@ Route::middleware([CheckLogin::class])->group(function () {
         // Settings Page
         Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     });
+
+
+
+    Route::prefix('branch')->name('branch.')->middleware([CheckLogin::class])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('branch.dashboard');
+    })->name('dashboard.index');
+});
+
+Route::prefix('workshop')->name('workshop.')->middleware([CheckLogin::class])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('workshop.dashboard');
+    })->name('dashboard.index');
+});
+
 });

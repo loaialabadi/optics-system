@@ -30,7 +30,6 @@ public function login(Request $request)
 
     // تسجيل الدخول باستخدام Laravel Auth
     Auth::login($user);
-
     // توجيه حسب الدور
     switch ($user->role) {
         case 'admin':

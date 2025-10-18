@@ -33,7 +33,7 @@
         <div class="text-center py-4 fs-4 fw-bold border-bottom border-white">ورشة العمل</div>
         <ul class="nav flex-column mt-3 px-2">
             <li class="nav-item mb-2">
-                <a href="{{ route('workshop.dashboard') }}" class="nav-link d-flex align-items-center p-2">
+                <a href="{{ route('admin.workshop.index') }}" class="nav-link d-flex align-items-center p-2">
                     <i class="bi bi-house-door-fill"></i><span>لوحة التحكم</span>
                 </a>
             </li>
