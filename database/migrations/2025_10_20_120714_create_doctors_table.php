@@ -1,4 +1,3 @@
-php artisan make:migration create_branches_table --create=branches
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -8,17 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone')->unique();
-            $table->string('address');
+            $table->string('phone')->nullable();
+            $table->string('clinic_name')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('doctors');
     }
 };

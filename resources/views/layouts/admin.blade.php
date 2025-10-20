@@ -77,6 +77,22 @@
                     <span>الإعدادات</span>
                 </a>
             </li>
+    
+            <li class="nav-item mb-2">
+                <a href="{{ route('admin.suppliers.index') }}" class="nav-link d-flex align-items-center p-2">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <span> الموردين</span>
+                </a>
+            </li>
+            
+            <li class="nav-item mb-2">
+                <a href="{{ route('admin.doctors.index') }}" class="nav-link d-flex align-items-center p-2">
+                    <i class="bi bi-person-badge-fill"></i>
+                    <span> الأطباء</span>
+                </a>
+            </li>
+
+
             <li class="nav-item">
                 <a href="{{ route('logout') }}" class="nav-link d-flex align-items-center p-2">
                     <i class="bi bi-box-arrow-right"></i>

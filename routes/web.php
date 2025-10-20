@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin\Settings\User\UserController;
 use App\Http\Controllers\Admin\Settings\Settings\SettingController;
 use App\Http\Controllers\Admin\Settings\Branch\BranchController;
 use App\Http\Controllers\Admin\Settings\DashboardController;
+use App\Http\Controllers\Admin\Supplier\SupplierController;
+use App\Http\Controllers\Admin\Doctor\DoctorController;
+
 use App\Http\Middleware\CheckLogin;
 
 /*
@@ -56,5 +59,12 @@ Route::prefix('workshop')->name('workshop.')->middleware([CheckLogin::class])->g
         return view('workshop.dashboard');
     })->name('dashboard.index');
 });
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('suppliers', App\Http\Controllers\Admin\Supplier\SupplierController::class);
+});
+
+Route::resource('doctors', \App\Http\Controllers\Admin\Doctor\DoctorController::class)->names('admin.doctors');
 
 });
